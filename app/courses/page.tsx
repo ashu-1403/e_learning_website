@@ -23,13 +23,12 @@ interface Course {
   syllabus: string[];
 }
 
-
-const courses = [
+const courses: Course[] = [
   {
     title: "Web Development Bootcamp",
     image: webDevImage,
     description: "Master HTML, CSS, JavaScript, and popular frameworks.",
-    fullDescription: "This comprehensive bootcamp will take you from a beginner to a proficient web developer. You'll learn HTML5, CSS3, JavaScript, React, Node.js, and more. By the end of this course, you'll be able to build responsive, dynamic websites and web applications.",
+    fullDescription: "This comprehensive bootcamp will take you from a beginner to a proficient web developer. You&apos;ll learn HTML5, CSS3, JavaScript, React, Node.js, and more. By the end of this course, you&apos;ll be able to build responsive, dynamic websites and web applications.",
     syllabus: [
       "HTML5 and CSS3 fundamentals",
       "JavaScript ES6+ and DOM manipulation",
@@ -44,7 +43,7 @@ const courses = [
     title: "App Development Mastery",
     image: appDevImage,
     description: "Create stunning mobile apps for iOS and Android.",
-    fullDescription: "Dive into the world of mobile app development. This course covers both iOS and Android platforms, teaching you Swift for iOS and Kotlin for Android. You'll learn about app architecture, UI/UX design principles specific to mobile, and how to publish your apps to the respective app stores.",
+    fullDescription: "Dive into the world of mobile app development. This course covers both iOS and Android platforms, teaching you Swift for iOS and Kotlin for Android. You&apos;ll learn about app architecture, UI/UX design principles specific to mobile, and how to publish your apps to the respective app stores.",
     syllabus: [
       "Introduction to mobile app development",
       "Swift programming for iOS",
@@ -59,7 +58,7 @@ const courses = [
     title: "Python Programming",
     image: pythonImage,
     description: "Learn Python for software development and scripting.",
-    fullDescription: "This course provides a comprehensive introduction to Python programming. You'll learn the fundamentals of Python syntax, data structures, and object-oriented programming. By the end, you'll be able to write complex Python programs and use popular libraries for data manipulation and analysis.",
+    fullDescription: "This course provides a comprehensive introduction to Python programming. You&apos;ll learn the fundamentals of Python syntax, data structures, and object-oriented programming. By the end, you&apos;ll be able to write complex Python programs and use popular libraries for data manipulation and analysis.",
     syllabus: [
       "Python basics and syntax",
       "Data structures and algorithms in Python",
@@ -74,7 +73,7 @@ const courses = [
     title: "Artificial Intelligence Fundamentals",
     image: aiImage,
     description: "Explore the basics of AI and its applications.",
-    fullDescription: "This course introduces you to the fascinating world of Artificial Intelligence. You'll learn about various AI techniques, including search algorithms, knowledge representation, and machine learning. The course also covers ethical considerations and real-world applications of AI.",
+    fullDescription: "This course introduces you to the fascinating world of Artificial Intelligence. You&apos;ll learn about various AI techniques, including search algorithms, knowledge representation, and machine learning. The course also covers ethical considerations and real-world applications of AI.",
     syllabus: [
       "Introduction to AI and its history",
       "Search algorithms and problem-solving",
@@ -89,7 +88,7 @@ const courses = [
     title: "Machine Learning Essentials",
     image: mlImage,
     description: "Dive into ML algorithms and their implementation.",
-    fullDescription: "This course covers the fundamental concepts and algorithms in machine learning. You'll learn about supervised and unsupervised learning, model evaluation, and feature engineering. By the end of the course, you'll be able to implement and deploy machine learning models for various applications.",
+    fullDescription: "This course covers the fundamental concepts and algorithms in machine learning. You&apos;ll learn about supervised and unsupervised learning, model evaluation, and feature engineering. By the end of the course, you&apos;ll be able to implement and deploy machine learning models for various applications.",
     syllabus: [
       "Introduction to machine learning",
       "Supervised learning algorithms",
@@ -104,7 +103,7 @@ const courses = [
     title: "Data Analysis with Python",
     image: dataAnalysisImage,
     description: "Learn to analyze and visualize data using Python.",
-    fullDescription: "This course teaches you how to use Python for data analysis and visualization. You'll learn how to work with popular libraries like Pandas, NumPy, and Matplotlib to process, analyze, and visualize complex datasets. By the end, you'll be able to derive meaningful insights from data and communicate them effectively.",
+    fullDescription: "This course teaches you how to use Python for data analysis and visualization. You&apos;ll learn how to work with popular libraries like Pandas, NumPy, and Matplotlib to process, analyze, and visualize complex datasets. By the end, you&apos;ll be able to derive meaningful insights from data and communicate them effectively.",
     syllabus: [
       "Introduction to data analysis",
       "Working with Pandas for data manipulation",
@@ -119,7 +118,7 @@ const courses = [
     title: "UI/UX Design Principles",
     image: uiUxImage,
     description: "Create user-friendly and visually appealing interfaces.",
-    fullDescription: "This course introduces you to the principles of user interface (UI) and user experience (UX) design. You'll learn how to create intuitive, aesthetically pleasing interfaces that enhance user satisfaction. The course covers design thinking, wireframing, prototyping, and user testing methodologies.",
+    fullDescription: "This course introduces you to the principles of user interface (UI) and user experience (UX) design. You&apos;ll learn how to create intuitive, aesthetically pleasing interfaces that enhance user satisfaction. The course covers design thinking, wireframing, prototyping, and user testing methodologies.",
     syllabus: [
       "Introduction to UI/UX design",
       "Design thinking process",
@@ -134,7 +133,7 @@ const courses = [
     title: "Cloud Computing Fundamentals",
     image: cloudComputingImage,
     description: "Understand cloud services and deployment models.",
-    fullDescription: "This course provides a comprehensive introduction to cloud computing. You'll learn about different cloud service models, deployment strategies, and leading cloud platforms. By the end of the course, you'll be able to design and implement cloud-based solutions for various business needs.",
+    fullDescription: "This course provides a comprehensive introduction to cloud computing. You&apos;ll learn about different cloud service models, deployment strategies, and leading cloud platforms. By the end of the course, you&apos;ll be able to design and implement cloud-based solutions for various business needs.",
     syllabus: [
       "Introduction to cloud computing",
       "Cloud service models (IaaS, PaaS, SaaS)",
@@ -149,7 +148,7 @@ const courses = [
     title: "Cybersecurity Basics",
     image: cybersecurityImage,
     description: "Learn to protect systems and networks from cyber threats.",
-    fullDescription: "This course introduces you to the fundamental concepts of cybersecurity. You'll learn about various types of cyber threats, security protocols, and best practices for protecting digital assets. The course also covers incident response and ethical hacking techniques.",
+    fullDescription: "This course introduces you to the fundamental concepts of cybersecurity. You&apos;ll learn about various types of cyber threats, security protocols, and best practices for protecting digital assets. The course also covers incident response and ethical hacking techniques.",
     syllabus: [
       "Introduction to cybersecurity",
       "Network security fundamentals",
@@ -169,6 +168,7 @@ export default function Courses() {
   const toggleCourseDetails = (index: number) => {
     setExpandedCourse(expandedCourse === index ? null : index);
   };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <Head>
@@ -180,7 +180,7 @@ export default function Courses() {
         <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Courses</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden transition-duration-300">
+            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
               <Image src={course.image} alt={course.title} width={400} height={200} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
@@ -195,7 +195,7 @@ export default function Courses() {
                 {expandedCourse === index && (
                   <div className="mt-4">
                     <p className="text-gray-700 mb-4">{course.fullDescription}</p>
-                    <h4 className="text-lg font-semibold mb-2">What you'll learn:</h4>
+                    <h4 className="text-lg font-semibold mb-2">What you&apos;ll learn:</h4>
                     <ul className="list-disc list-inside text-gray-600">
                       {course.syllabus.map((item, idx) => (
                         <li key={idx}>{item}</li>

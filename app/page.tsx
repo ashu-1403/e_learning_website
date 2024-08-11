@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 import learning from "./learning.png";
@@ -147,7 +149,7 @@ const Home = () => {
                 image: testimonialImage1,
                 // Replaced single quote with HTML entity
                 quote:
-                  "SkillHub&#39;s Web Development Bootcamp completely transformed my career. I went from a complete beginner to landing my dream job in just 6 months!",
+                  "SkillHub&apos;s Web Development Bootcamp completely transformed my career. I went from a complete beginner to landing my dream job in just 6 months!",
               },
               {
                 name: "Michael Chen",
@@ -155,7 +157,7 @@ const Home = () => {
                 image: testimonialImage2,
                 // Replaced single quote with HTML entity
                 quote:
-                  "The Data Science course at SkillHub provided me with the perfect blend of theory and practical skills. I&#39;m now confidently working on complex machine learning projects.",
+                  "The Data Science course at SkillHub provided me with the perfect blend of theory and practical skills. I&apos;m now confidently working on complex machine learning projects.",
               },
             ].map((testimonial, index) => (
               <div
@@ -169,7 +171,7 @@ const Home = () => {
                 />
                 <div>
                   <p className="text-gray-600 italic mb-4">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </p>
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
