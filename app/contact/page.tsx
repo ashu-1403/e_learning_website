@@ -8,7 +8,6 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const ContactUs: NextPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted');
   };
 
@@ -26,7 +25,7 @@ const ContactUs: NextPage = () => {
               Contact Us
             </h1>
             <p className="mt-4 text-xl text-gray-600">
-              We'd love to hear from you. Drop us a line and we'll get back to you as soon as possible.
+              We&apos;d love to hear from you. Drop us a line and we&apos;ll get back to you as soon as possible.
             </p>
           </div>
 

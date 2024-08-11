@@ -164,7 +164,6 @@ const courses: Course[] = [
 export default function Courses() {
   const [expandedCourse, setExpandedCourse] = useState<number | null>(null);
 
-  // Explicitly type the index parameter as number
   const toggleCourseDetails = (index: number) => {
     setExpandedCourse(expandedCourse === index ? null : index);
   };

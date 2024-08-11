@@ -4,7 +4,6 @@ import React from 'react';
 import { NextPage } from 'next';
 import Image from 'next/image';
 
-// Replace these with actual logos
 import googleLogo from '../6929234_google_logo_icon.png';
 import microsoftLogo from '../4202105_microsoft_logo_social_social media_icon.png';
 import amazonLogo from '../2062062_amazon_buy_logo_online_shop_icon.png';

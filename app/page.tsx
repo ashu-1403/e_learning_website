@@ -147,7 +147,6 @@ const Home = () => {
                 name: "Sarah Johnson",
                 role: "Web Developer",
                 image: testimonialImage1,
-                // Replaced single quote with HTML entity
                 quote:
                   "SkillHub&apos;s Web Development Bootcamp completely transformed my career. I went from a complete beginner to landing my dream job in just 6 months!",
               },
