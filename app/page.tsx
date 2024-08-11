@@ -14,11 +14,9 @@ const Home = () => {
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
       <main className="container mx-auto px-4 py-8">
-        
-        {/* Hero Section */}
         <section className="bg-white rounded-xl shadow-lg overflow-hidden mb-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 p-8 text-center md:text-left">
+            <div className="md:w-1/2 p-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
                 Unlock Your Potential with{" "}
                 <span className="text-blue-500">SkillHub</span>
@@ -27,7 +25,7 @@ const Home = () => {
                 Empower yourself with cutting-edge skills for the digital age.
                 Join our interactive courses and transform your career.
               </p>
-              <div className="flex justify-center md:justify-start">
+              <div className="text-center">
                 <button className="bg-blue-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300">
                   Start Learning
                 </button>
@@ -37,14 +35,14 @@ const Home = () => {
               <Image
                 src={learning}
                 alt="E-learning illustration"
-                className="w-full h-auto"
+                className="w-full h-auto object-contain"
                 layout="responsive"
+                priority={true}
               />
             </div>
           </div>
         </section>
 
-        {/* Continue Learning Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
             Continue Learning
@@ -90,7 +88,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Why Choose SkillHub Section */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-16">
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
             Why Choose SkillHub?
@@ -138,7 +135,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
             What Our Students Say
@@ -181,7 +177,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Call to Action Section */}
         <section className="bg-blue-500 rounded-xl shadow-lg p-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Learning Journey?
@@ -190,7 +185,7 @@ const Home = () => {
             Join thousands of students who are already transforming their
             careers with SkillHub.
           </p>
-          <button  className="bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
+          <button className="bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
             Get Started Today
           </button>
         </section>
