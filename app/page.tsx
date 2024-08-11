@@ -47,7 +47,7 @@ const Home = () => {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-            Continue Learning
+            Featured Courses
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -82,7 +82,7 @@ const Home = () => {
                   <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
                   <p className="text-gray-600 mb-4">{course.description}</p>
                   <button className="bg-blue-500 text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-blue-600 transition duration-300">
-                    Continue
+                    enroll now
                   </button>
                 </div>
               </div>
