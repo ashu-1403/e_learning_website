@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import { StaticImageData } from "next/image";
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 import webDevImage from "../webDev.jpg";
 import appDevImage from "../appDev.jpg";
@@ -21,6 +22,7 @@ interface Course {
   description: string;
   fullDescription: string;
   syllabus: string[];
+  rating: number;
 }
 
 const courses: Course[] = [
@@ -28,7 +30,7 @@ const courses: Course[] = [
     title: "Web Development Bootcamp",
     image: webDevImage,
     description: "Master HTML, CSS, JavaScript, and popular frameworks.",
-    fullDescription: "This comprehensive bootcamp will take you from a beginner to a proficient web developer. You&apos;ll learn HTML5, CSS3, JavaScript, React, Node.js, and more. By the end of this course, you&apos;ll be able to build responsive, dynamic websites and web applications.",
+    fullDescription: "This comprehensive bootcamp will take you from a beginner to a proficient web developer. You'll learn HTML5, CSS3, JavaScript, React, Node.js, and more. By the end of this course, you'll be able to build responsive, dynamic websites and web applications.",
     syllabus: [
       "HTML5 and CSS3 fundamentals",
       "JavaScript ES6+ and DOM manipulation",
@@ -37,13 +39,14 @@ const courses: Course[] = [
       "Database integration with MongoDB",
       "RESTful API design and implementation",
       "Deployment and hosting"
-    ]
+    ],
+    rating: 4.8
   },
   {
     title: "App Development Mastery",
     image: appDevImage,
     description: "Create stunning mobile apps for iOS and Android.",
-    fullDescription: "Dive into the world of mobile app development. This course covers both iOS and Android platforms, teaching you Swift for iOS and Kotlin for Android. You&apos;ll learn about app architecture, UI/UX design principles specific to mobile, and how to publish your apps to the respective app stores.",
+    fullDescription: "Dive into the world of mobile app development. This course covers both iOS and Android platforms, teaching you Swift for iOS and Kotlin for Android. You'll learn about app architecture, UI/UX design principles specific to mobile, and how to publish your apps to the respective app stores.",
     syllabus: [
       "Introduction to mobile app development",
       "Swift programming for iOS",
@@ -52,13 +55,14 @@ const courses: Course[] = [
       "Working with device features (camera, GPS, etc.)",
       "Data persistence and networking",
       "App store submission and guidelines"
-    ]
+    ],
+    rating: 4.7
   },
   {
     title: "Python Programming",
     image: pythonImage,
     description: "Learn Python for software development and scripting.",
-    fullDescription: "This course provides a comprehensive introduction to Python programming. You&apos;ll learn the fundamentals of Python syntax, data structures, and object-oriented programming. By the end, you&apos;ll be able to write complex Python programs and use popular libraries for data manipulation and analysis.",
+    fullDescription: "This course provides a comprehensive introduction to Python programming. You'll learn the fundamentals of Python syntax, data structures, and object-oriented programming. By the end, you'll be able to write complex Python programs and use popular libraries for data manipulation and analysis.",
     syllabus: [
       "Python basics and syntax",
       "Data structures and algorithms in Python",
@@ -67,13 +71,14 @@ const courses: Course[] = [
       "Working with APIs and web scraping",
       "Data analysis with Pandas and NumPy",
       "Introduction to web development with Django"
-    ]
+    ],
+    rating: 4.9
   },
   {
     title: "Artificial Intelligence Fundamentals",
     image: aiImage,
     description: "Explore the basics of AI and its applications.",
-    fullDescription: "This course introduces you to the fascinating world of Artificial Intelligence. You&apos;ll learn about various AI techniques, including search algorithms, knowledge representation, and machine learning. The course also covers ethical considerations and real-world applications of AI.",
+    fullDescription: "This course introduces you to the fascinating world of Artificial Intelligence. You'll learn about various AI techniques, including search algorithms, knowledge representation, and machine learning. The course also covers ethical considerations and real-world applications of AI.",
     syllabus: [
       "Introduction to AI and its history",
       "Search algorithms and problem-solving",
@@ -82,13 +87,14 @@ const courses: Course[] = [
       "Natural language processing",
       "Computer vision",
       "AI ethics and societal impact"
-    ]
+    ],
+    rating: 4.6
   },
   {
     title: "Machine Learning Essentials",
     image: mlImage,
     description: "Dive into ML algorithms and their implementation.",
-    fullDescription: "This course covers the fundamental concepts and algorithms in machine learning. You&apos;ll learn about supervised and unsupervised learning, model evaluation, and feature engineering. By the end of the course, you&apos;ll be able to implement and deploy machine learning models for various applications.",
+    fullDescription: "This course covers the fundamental concepts and algorithms in machine learning. You'll learn about supervised and unsupervised learning, model evaluation, and feature engineering. By the end of the course, you'll be able to implement and deploy machine learning models for various applications.",
     syllabus: [
       "Introduction to machine learning",
       "Supervised learning algorithms",
@@ -97,13 +103,14 @@ const courses: Course[] = [
       "Model evaluation and validation",
       "Ensemble methods",
       "Deep learning introduction"
-    ]
+    ],
+    rating: 4.7
   },
   {
     title: "Data Analysis with Python",
     image: dataAnalysisImage,
     description: "Learn to analyze and visualize data using Python.",
-    fullDescription: "This course teaches you how to use Python for data analysis and visualization. You&apos;ll learn how to work with popular libraries like Pandas, NumPy, and Matplotlib to process, analyze, and visualize complex datasets. By the end, you&apos;ll be able to derive meaningful insights from data and communicate them effectively.",
+    fullDescription: "This course teaches you how to use Python for data analysis and visualization. You'll learn how to work with popular libraries like Pandas, NumPy, and Matplotlib to process, analyze, and visualize complex datasets. By the end, you'll be able to derive meaningful insights from data and communicate them effectively.",
     syllabus: [
       "Introduction to data analysis",
       "Working with Pandas for data manipulation",
@@ -112,13 +119,14 @@ const courses: Course[] = [
       "Data visualization with Matplotlib and Seaborn",
       "Statistical analysis in Python",
       "Introduction to data mining techniques"
-    ]
+    ],
+    rating: 4.8
   },
   {
     title: "UI/UX Design Principles",
     image: uiUxImage,
     description: "Create user-friendly and visually appealing interfaces.",
-    fullDescription: "This course introduces you to the principles of user interface (UI) and user experience (UX) design. You&apos;ll learn how to create intuitive, aesthetically pleasing interfaces that enhance user satisfaction. The course covers design thinking, wireframing, prototyping, and user testing methodologies.",
+    fullDescription: "This course introduces you to the principles of user interface (UI) and user experience (UX) design. You'll learn how to create intuitive, aesthetically pleasing interfaces that enhance user satisfaction. The course covers design thinking, wireframing, prototyping, and user testing methodologies.",
     syllabus: [
       "Introduction to UI/UX design",
       "Design thinking process",
@@ -127,13 +135,14 @@ const courses: Course[] = [
       "Wireframing and prototyping",
       "Visual design principles",
       "Usability testing and iteration"
-    ]
+    ],
+    rating: 4.5
   },
   {
     title: "Cloud Computing Fundamentals",
     image: cloudComputingImage,
     description: "Understand cloud services and deployment models.",
-    fullDescription: "This course provides a comprehensive introduction to cloud computing. You&apos;ll learn about different cloud service models, deployment strategies, and leading cloud platforms. By the end of the course, you&apos;ll be able to design and implement cloud-based solutions for various business needs.",
+    fullDescription: "This course provides a comprehensive introduction to cloud computing. You'll learn about different cloud service models, deployment strategies, and leading cloud platforms. By the end of the course, you'll be able to design and implement cloud-based solutions for various business needs.",
     syllabus: [
       "Introduction to cloud computing",
       "Cloud service models (IaaS, PaaS, SaaS)",
@@ -142,13 +151,14 @@ const courses: Course[] = [
       "Microsoft Azure basics",
       "Google Cloud Platform overview",
       "Cloud security and compliance"
-    ]
+    ],
+    rating: 4.6
   },
   {
     title: "Cybersecurity Basics",
     image: cybersecurityImage,
     description: "Learn to protect systems and networks from cyber threats.",
-    fullDescription: "This course introduces you to the fundamental concepts of cybersecurity. You&apos;ll learn about various types of cyber threats, security protocols, and best practices for protecting digital assets. The course also covers incident response and ethical hacking techniques.",
+    fullDescription: "This course introduces you to the fundamental concepts of cybersecurity. You'll learn about various types of cyber threats, security protocols, and best practices for protecting digital assets. The course also covers incident response and ethical hacking techniques.",
     syllabus: [
       "Introduction to cybersecurity",
       "Network security fundamentals",
@@ -157,9 +167,32 @@ const courses: Course[] = [
       "Malware analysis and prevention",
       "Incident response and forensics",
       "Ethical hacking and penetration testing"
-    ]
+    ],
+    rating: 4.7
   }
 ];
+
+const RatingStars = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+
+  return (
+    <div className="flex items-center">
+      {[...Array(5)].map((_, i) => (
+        <span key={i}>
+          {i < fullStars ? (
+            <FaStar className="text-yellow-400" />
+          ) : i === fullStars && hasHalfStar ? (
+            <FaStarHalfAlt className="text-yellow-400" />
+          ) : (
+            <FaStar className="text-gray-300" />
+          )}
+        </span>
+      ))}
+      <span className="ml-2 text-sm text-gray-600">{rating.toFixed(1)}</span>
+    </div>
+  );
+};
 
 export default function Courses() {
   const [expandedCourse, setExpandedCourse] = useState<number | null>(null);
@@ -175,27 +208,33 @@ export default function Courses() {
         <meta name="description" content="Explore our wide range of courses at SkillHub" />
       </Head>
 
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Courses</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <main className="container mx-auto px-4 py-12">
+        <h1 className="text-5xl font-bold text-center mb-16 text-gray-800">Our Courses</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {courses.map((course, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-              <Image src={course.image} alt={course.title} width={400} height={200} className="w-full h-48 object-cover" />
+            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <div className="relative">
+                <Image src={course.image} alt={course.title} width={400} height={200} className="w-full h-56 object-cover" />
+                <div className="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 rounded-bl-lg text-sm font-semibold">
+                  New
+                </div>
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-                <p className="text-gray-600 mb-4">{course.description}</p>
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">{course.title}</h3>
+                <RatingStars rating={course.rating} />
+                <p className="text-gray-600 mt-3 mb-4">{course.description}</p>
                 <button 
                   onClick={() => toggleCourseDetails(index)} 
-                  className="bg-blue-500 text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-500 text-white py-2 px-6 rounded-full text-sm font-medium hover:bg-blue-600 transition duration-300 shadow-md hover:shadow-lg"
                 >
                   {expandedCourse === index ? "Show Less" : "Learn More"}
                 </button>
                 
                 {expandedCourse === index && (
-                  <div className="mt-4">
-                    <p className="text-gray-700 mb-4">{course.fullDescription}</p>
-                    <h4 className="text-lg font-semibold mb-2">What you&apos;ll learn:</h4>
-                    <ul className="list-disc list-inside text-gray-600">
+                  <div className="mt-6 space-y-4">
+                    <p className="text-gray-700">{course.fullDescription}</p>
+                    <h4 className="text-lg font-semibold text-gray-800">What you'll learn:</h4>
+                    <ul className="list-disc list-inside text-gray-600 space-y-2">
                       {course.syllabus.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
@@ -208,7 +247,7 @@ export default function Courses() {
         </div>
       </main>
 
-      <footer className="bg-gray-800 text-white py-8 mt-16">
+      <footer className="bg-gray-800 text-white py-10 mt-20">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 SkillHub. All rights reserved.</p>
         </div>
