@@ -37,7 +37,7 @@ const Home = () => {
               <Image
                 src={learning}
                 alt="E-learning illustration"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain sm:w-4/5 sm:h-auto md:w-full"
                 layout="responsive"
                 priority={true}
               />
