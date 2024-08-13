@@ -1,4 +1,6 @@
 "use client";
+import React, { useState } from 'react';
+import PaymentModal from '@/components/PaymentModal';
 
 import Navbar from "../components/Navbar";
 import Image from "next/image";
@@ -12,6 +14,19 @@ import testimonialImage1 from "./testimonial1.jpg";
 import testimonialImage2 from "./testimonial2.jpg";
 
 const Home = () => {
+
+
+  const [isPaymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState({ planType: '', amount: 0 });
+
+  const openPaymentModal = (planType: string, amount: number) => {
+    setSelectedPlan({ planType, amount });
+    setPaymentModalOpen(true);
+  };
+
+  const closePaymentModal = () => {
+    setPaymentModalOpen(false);
+  };
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
@@ -260,7 +275,10 @@ const Home = () => {
                   Community forum access
                 </li>
               </ul>
-              <button className="w-full bg-blue-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300">
+              <button 
+              className="w-full bg-blue-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300" 
+               onClick={() => openPaymentModal('Monthly', 3000)}
+               >
                 Subscribe Monthly
               </button>
             </div>
@@ -344,13 +362,18 @@ const Home = () => {
                   1-on-1 mentoring session
                 </li>
               </ul>
-              <button className="w-full bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">
+              <button 
+              className="w-full bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
+              onClick={() => openPaymentModal('Annual', 27000)}>
                 Subscribe Annually
               </button>
             </div>
           </div>
         </section>
       </main>
+
+
+      
 
       <footer className="bg-gray-800 text-white py-8 mt-16">
         <div className="container mx-auto px-4">
@@ -393,8 +416,16 @@ const Home = () => {
           </div>
         </div>
       </footer>
-    </div>
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={closePaymentModal}
+        planType={selectedPlan.planType}
+        amount={selectedPlan.amount}
+      />
+      </div>
   );
 };
+
+
 
 export default Home;
