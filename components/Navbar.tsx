@@ -105,7 +105,6 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Search bar for mobile devices */}
       <div className="md:hidden bg-gray-800 p-4">
         <form onSubmit={handleSearch} className="relative text-gray-300 w-full">
           <input

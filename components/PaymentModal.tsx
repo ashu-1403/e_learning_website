@@ -19,8 +19,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, planType, 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically process the payment
-    // For now, we'll just show an alert
+    
     alert(`Payment of ₹${amount} for ${planType} plan successful!`);
     onClose();
   };
