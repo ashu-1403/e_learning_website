@@ -37,8 +37,9 @@ const Home = () => {
               <Image
                 src={learning}
                 alt="E-learning illustration"
-                className="w-full h-auto object-contain sm:w-4/5 sm:h-auto md:w-full"
-                layout="responsive"
+                className="w-full h-auto"
+                width={500}
+                height={500}
                 priority={true}
               />
             </div>
@@ -197,19 +198,65 @@ const Home = () => {
           </h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8">
             <div className="bg-white rounded-xl shadow-lg p-8 w-full md:w-1/3 transition-transform duration-300 hover:scale-105">
-              <h3 className="text-2xl font-bold text-center mb-4 text-blue-500">Monthly Plan</h3>
-              <p className="text-4xl font-bold text-center mb-6">₹3,000<span className="text-xl font-normal text-gray-600">/month</span></p>
+              <h3 className="text-2xl font-bold text-center mb-4 text-blue-500">
+                Monthly Plan
+              </h3>
+              <p className="text-4xl font-bold text-center mb-6">
+                ₹3,000
+                <span className="text-xl font-normal text-gray-600">
+                  /month
+                </span>
+              </p>
               <ul className="mb-8">
                 <li className="flex items-center mb-2">
-                  <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Access to all courses
                 </li>
                 <li className="flex items-center mb-2">
-                  <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Monthly live Q&A sessions
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Community forum access
                 </li>
               </ul>
@@ -218,24 +265,82 @@ const Home = () => {
               </button>
             </div>
             <div className="bg-blue-500 rounded-xl shadow-lg p-8 w-full md:w-1/3 text-white transform scale-105 relative">
-              <div className="absolute top-0 right-0 bg-yellow-400 text-blue-800 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">Best Value</div>
-              <h3 className="text-2xl font-bold text-center mb-4">Annual Plan</h3>
-              <p className="text-4xl font-bold text-center mb-6">₹27,000<span className="text-xl font-normal">/year</span></p>
+              <div className="absolute top-0 right-0 bg-yellow-400 text-blue-800 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                Best Value
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-4">
+                Annual Plan
+              </h3>
+              <p className="text-4xl font-bold text-center mb-6">
+                ₹27,000<span className="text-xl font-normal">/year</span>
+              </p>
               <ul className="mb-8">
                 <li className="flex items-center mb-2">
-                  <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Access to all courses
                 </li>
                 <li className="flex items-center mb-2">
-                  <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Weekly live Q&A sessions
                 </li>
                 <li className="flex items-center mb-2">
-                  <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   Community forum access
                 </li>
                 <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <svg
+                    className="w-5 h-5 mr-2 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
                   1-on-1 mentoring session
                 </li>
               </ul>
@@ -244,7 +349,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          </section>
+        </section>
       </main>
 
       <footer className="bg-gray-800 text-white py-8 mt-16">
