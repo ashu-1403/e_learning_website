@@ -122,27 +122,50 @@ const Home = () => {
     },
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  };
+
+  const hoverVariants = {
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
+    tap: { scale: 0.95, transition: { duration: 0.2 } },
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <Navbar />
       <main className="container mx-auto px-4 py-8">
         <section className="bg-white rounded-xl shadow-lg overflow-hidden mb-16">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 p-8">
+            <div className="md:w-1/2 p-6 md:p-8">
               <motion.h1
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold mb-6 text-gray-800"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-gray-800 text-center md:text-left"
               >
                 Unlock Your Potential with{" "}
-                <span className="text-blue-500 text-center">SkillHub</span>
+                <span className="text-blue-500">SkillHub</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl text-gray-600 mb-8"
+                className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 text-center md:text-left"
               >
                 Empower yourself with cutting-edge skills for the digital age.
                 Join our interactive courses and transform your career.
@@ -151,12 +174,12 @@ const Home = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="text-center"
+                className="text-center md:text-left"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-blue-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-500 text-white py-3 px-6 md:px-8 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300"
                 >
                   Start Learning
                 </motion.button>
@@ -166,7 +189,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="md:w-1/2"
+              className="md:w-1/2 mt-6 md:mt-0"
             >
               <Image
                 src={learning}
@@ -387,40 +410,50 @@ const Home = () => {
         </motion.section>
 
         <motion.section
-      className="bg-blue-500 rounded-xl shadow-lg p-8 text-center text-white"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={ctaSectionVariants}
-    >
-      <motion.h2
-        className="text-3xl font-bold mb-4"
-        variants={ctaItemVariants}
-      >
-        Ready to Start Your Learning Journey?
-      </motion.h2>
-      <motion.p
-        className="text-xl mb-8"
-        variants={ctaItemVariants}
-      >
-        Join thousands of students who are already transforming their
-        careers with SkillHub.
-      </motion.p>
-      <motion.button
-        className="bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
-        variants={buttonVariants}
-        whileHover="hover"
-        whileTap="tap"
-      >
-        Get Started Today
-        </motion.button>
-    </motion.section>
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 mt-12">
+          className="bg-blue-500 rounded-xl shadow-lg p-8 text-center text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={ctaSectionVariants}
+        >
+          <motion.h2
+            className="text-3xl font-bold mb-4"
+            variants={ctaItemVariants}
+          >
+            Ready to Start Your Learning Journey?
+          </motion.h2>
+          <motion.p className="text-xl mb-8" variants={ctaItemVariants}>
+            Join thousands of students who are already transforming their
+            careers with SkillHub.
+          </motion.p>
+          <motion.button
+            className="bg-white text-blue-500 py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Get Started Today
+          </motion.button>
+        </motion.section>
+        <motion.section
+          className="mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
+          <motion.h2
+            className="text-3xl font-bold text-center mb-10 text-gray-800 mt-12"
+            variants={sectionVariants}
+          >
             Choose Your Plan
-          </h2>
+          </motion.h2>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-8 w-full md:w-1/3 transition-transform duration-300 hover:scale-105">
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 w-full md:w-1/3 transition-transform duration-300"
+              variants={cardVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
               <h3 className="text-2xl font-bold text-center mb-4 text-blue-500">
                 Monthly Plan
               </h3>
@@ -489,8 +522,13 @@ const Home = () => {
               >
                 Subscribe Monthly
               </button>
-            </div>
-            <div className="bg-blue-500 rounded-xl shadow-lg p-8 w-full md:w-1/3 text-white transform scale-105 relative">
+            </motion.div>
+            <motion.div
+              className="bg-blue-500 rounded-xl shadow-lg p-8 w-full md:w-1/3 text-white transform scale-105 relative"
+              variants={cardVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
               <div className="absolute top-0 right-0 bg-yellow-400 text-blue-800 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                 Best Value
               </div>
@@ -576,9 +614,9 @@ const Home = () => {
               >
                 Subscribe Annually
               </button>
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
       </main>
 
       <footer className="bg-gray-800 text-white py-8 mt-16">
